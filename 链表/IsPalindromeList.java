@@ -38,7 +38,6 @@ public class IsPalindromeList {
 	        firstHalfEnd.next=reverseList(secondHalfStart);
 	        return result;
 
-
 	    }
 
 

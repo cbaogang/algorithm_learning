@@ -1,7 +1,14 @@
 package 链表;
 
 import 链表.IsPalindromeList.ListNode;
-import 链表.LinkedListMid.Node;
+
+
+/**
+ * 21. 合并两个有序链表
+ * 148. 排序链表
+ * @author kylec
+ *
+ */
 
 public class SortList {
 
@@ -67,8 +74,7 @@ public class SortList {
 	 public static ListNode sortList(ListNode head) {
 		 if(head==null||head.next==null) {
 			 return head;
-		 }
-		 
+		 }	 
 		
 		 ListNode midNode=middleNode(head);
 		 ListNode rightHead=midNode.next;
@@ -151,7 +157,7 @@ public class SortList {
 	 
 	 public static ListNode merge(ListNode left, ListNode right) {
 		
-		ListNode head=new ListNode(0);
+		ListNode head=new ListNode(-1);
 		ListNode res=head;
 		
 		while(left!=null&&right!=null) {
@@ -165,16 +171,14 @@ public class SortList {
 			
 			res=res.next;
 		}
-		while(left!=null) {
+		if(left!=null) {
 			res.next=left;
-			left=left.next;
-			res=res.next;
+			
 		}
 		
-		while(right!=null) {
+		if(right!=null) {
 			res.next=right;
-			right=right.next;
-			res=res.next;
+		
 		}
 		
 		return head.next;
